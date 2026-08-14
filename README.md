@@ -1,0 +1,1 @@
+# Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture
