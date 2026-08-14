@@ -29,13 +29,15 @@ Standard knowledge distillation traditionally distills classification logits fro
 2. **Student Backbone:** Lightweight convolutional architectures (ResNet-18, ResNet-34, or ResNet-50).
 3. **Connector (Projection Head):** A 2-layer Multi-Layer Perceptron (MLP) that maps the student's internal feature representation into CLIP’s 512-dimensional metric space.
 4. **Text Anchors:** Pre-computed, fixed text embeddings of target class labels generated through prompt engineering ("a photo of a {class}").
-
+5. **Dataset:**
+    **FGVC Aircraft:** 100 classes, 10K images
+    **CIPHER 10:** 10 classes, 50K images for train and 10k Images
 Mathematical Formulation & Training MechanicsThe distillation process is governed by a tripartite loss function modulated by a Dynamic Linear Ramp Schedule.
 1. **Classification Task Loss ($L_{\text{task}}$):** Standard multi-class Cross-Entropy on the student's direct task predictions:
 
    $L_{\text{task}} = -\sum_{c=1}^{C} y_c \log(\hat{y}_c)$
 
-2. **Visual Distillation Loss ($L_{\text{visual}}$):** Forces the projected student visual embeddings ($\hat{z}_{\text{student}}$) to align with the teacher's visual embeddings ($z_{\text{teacher}}$) using Mean Squared Error (MSE):
+2. **Visual Distillation Loss ($L_{\text{visual}}$):** Forces the projected student visual embeddings $\hat{z}_{\text{student}}$ to align with the teacher's visual embeddings $z_{\text{teacher}}$ using Mean Squared Error (MSE):
 
    $L_{\text{visual}} = \left\lVert \hat{z}_{\text{student}} - z_{\text{teacher}} \right\rVert_2^2$
 
@@ -52,8 +54,9 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
    
    $w_{\text{task}}(t) = \min\left(1.0, \max\left(0.0, \frac{t}{T \cdot r}\right)\right)$
 
-
+Data
 ## Result Images
+DataSet: FGVC Aircruft
 ![FGVC - ResNet 18](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2018.png)
 
 ![FGVC - Resnet 34](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2034.png)
