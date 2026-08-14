@@ -1,5 +1,5 @@
 # Transfer Knowledge from CLIP to Lightweight CNN model using VL2Lite architecture
-[VL2Lite](https://github.com/jsjangAI/VL2Lite) introduced by Jang et al. 2025<sup>1</sup> is a Vision-Language Knowledge Distillation framework designed to transfer rich, multi-modal semantic knowledge from large-scale foundation models into lightweight, compute-efficient convolutional vision backbones.
+[VL2Lite](https://github.com/jsjangAI/VL2Lite) introduced by Jang et al. 2025<sup>1</sup> is a Vision-Language Knowledge Distillation framework designed to transfer rich, multi-modal semantic knowledge from large-scale foundation models into lightweight, compute-efficient convolutional vision backbones. I have tried to implement a demi version of this as a part of my research reminding the hardware constraints. I also took help of AI tools heavily to understand the concept and write code. 
 
                   ┌───────────────────────────────┐
                   │   Teacher: CLIP (ViT-B/32)    │  [Frozen]
@@ -37,7 +37,7 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 
 2. **Visual Distillation Loss ($L_{\text{visual}}$):** Forces the projected student visual embeddings ($\hat{z}_{\text{student}}$) to align with the teacher's visual embeddings ($z_{\text{teacher}}$) using Mean Squared Error (MSE):
 
-   $L_{\text{visual}} = \Vert{}\hat{z}_{\text{student}} - z_{\text{teacher}}\Vert{}_2^2$
+   $L_{\text{visual}} = \left\lVert \hat{z}_{\text{student}} - z_{\text{teacher}} \right\rVert_2^2$
 
 3. **Linguistic Distillation Loss ($L_{\text{text}}$):** Calculates cosine similarity logits between visual embeddings and all class text anchors $T$, scaled by temperature parameter $\tau = 0.07$. The Kullback-Leibler (KL) Divergence minimizes the distance between student and teacher similarity distributions:
 
@@ -51,8 +51,11 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 
 ## Result Images
 ![FGVC - ResNet 18](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2018.png)
-![FGVC Resnet 34](Result Images/FGVC Resnet 34.png)
-![A descriptive description of the image](https://example.com)
-![A descriptive description of the image](https://example.com)
+
+![FGVC - Resnet 34]([Result Images/FGVC Resnet 34.png](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2034.png))
+
+![FGVC - Resnet 50]([https://example.com](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2050.png))
+
+![CIPHER 10 - ResNet 50]([https://example.com](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/CIPHER10%20ResNet%2050.png))
 ## Reference
 1. J. Jang, C. Ma and B. Lee, "[VL2Lite: Task-Specific Knowledge Distillation from Large Vision-Language Models to Lightweight Networks](https://openaccess.thecvf.com/content/CVPR2025/papers/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.pdf)," 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Nashville, TN, USA, 2025, pp. 30073-30083, doi: 10.1109/CVPR52734.2025.02799.
