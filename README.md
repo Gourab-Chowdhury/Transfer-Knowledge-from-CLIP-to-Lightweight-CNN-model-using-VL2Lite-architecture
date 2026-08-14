@@ -41,10 +41,10 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 
 3. **Linguistic Distillation Loss ($L_{\text{text}}$):** Calculates cosine similarity logits between visual embeddings and all class text anchors $T$, scaled by temperature parameter $\tau = 0.07$. The Kullback-Leibler (KL) Divergence minimizes the distance between student and teacher similarity distributions:
 
-   $P_{\text{student}} = \text{softmax}\left(\frac{\hat{z}_{\text{student}}$
+   $P_{\text{student}} = \text{softmax}\left(\frac{\hat{z}_{\text{student}} T^\top}{\tau}\right)$
 
-   $T^\top}{\tau}\right), \quad P_{\text{teacher}} = \text{softmax}\left(\frac{z_{\text{teacher}} T^\top}{\tau}\right)$
-
+   $\quad P_{\text{teacher}} = \text{softmax}\left(\frac{z_{\text{teacher}} T^\top}{\tau}\right)$
+   
    $L_{\text{text}} = \tau^2 \cdot D_{\text{KL}}(P_{\text{student}} \parallel P_{\text{teacher}})$
 
 
