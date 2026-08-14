@@ -45,6 +45,15 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 
    $L_{\text{visual}} = \left\lVert \hat{z}_{\text{student}} - z_{\text{teacher}} \right\rVert_2^2$
 
+
+
+2. Visual Distillation Loss ($L_{\text{visual}}$): Forces the projected student visual embeddings ($\hat{z}_{\text{student}}$) to align with the teacher's visual embeddings ($z_{\text{teacher}}$) using Mean Squared Error (MSE):
+
+$$
+L_{\text{visual}} = \left\lVert \hat{z}_{\text{student}} - z_{\text{teacher}} \right\rVert_2^2
+$$
+
+
 3. **Linguistic Distillation Loss ($L_{\text{text}}$):** Calculates cosine similarity logits between visual embeddings and all class text anchors $T$, scaled by temperature parameter $\tau = 0.07$. The Kullback-Leibler (KL) Divergence minimizes the distance between student and teacher similarity distributions:
 
    $P_{\text{student}} = \text{softmax}\left(\frac{\hat{z}_{\text{student}} T^\top}{\tau}\right)$
