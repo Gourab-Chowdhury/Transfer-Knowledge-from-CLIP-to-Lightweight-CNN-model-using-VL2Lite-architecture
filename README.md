@@ -63,14 +63,21 @@ $$
 
 
 ## Result Images
-
+### Transferring Knowledge to ResNet-18 using FGVC-Aircraft dataset
 ![FGVC - ResNet 18](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2018.png)
+Test Accuracy: 79.39%
 
+### Transferring Knowledge to ResNet-18 using FGVC-Aircraft dataset
 ![FGVC - Resnet 34](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2034.png)
+Test Accuracy: 81.49%
 
+### Transferring Knowledge to ResNet-18 using FGVC-Aircraft dataset
 ![FGVC - Resnet 50](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2050.png)
+Test Accuracy: 83.68%
 
+### Transferring Knowledge to ResNet-18 using FGVC-Aircraft dataset
 ![CIPHER 10 - ResNet 50](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/CIPHER10%20ResNet%2050.png)
+Test Accuracy: 94.36%
 
 ## Reference
 1. J. Jang, C. Ma and B. Lee, "[VL2Lite: Task-Specific Knowledge Distillation from Large Vision-Language Models to Lightweight Networks](https://openaccess.thecvf.com/content/CVPR2025/papers/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.pdf)," 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Nashville, TN, USA, 2025, pp. 30073-30083, doi: 10.1109/CVPR52734.2025.02799.
