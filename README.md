@@ -41,13 +41,7 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 
    $L_{\text{task}} = -\sum_{c=1}^{C} y_c \log(\hat{y}_c)$
 
-2. **Visual Distillation Loss ($L_{\text{visual}}$):** Forces the projected student visual embeddings  ($\hat{z}_{\text{student}}$) to align with the teacher's visual embeddings ($z_{\text{teacher}}$) using Mean Squared Error (MSE):
-
-   $L_{\text{visual}} = \left\lVert \hat{z}_{\text{student}} - z_{\text{teacher}} \right\rVert_2^2$
-
-
-
-2. Visual Distillation Loss ($L_{\text{visual}}$): Forces the projected student visual embeddings ($\hat{z}_{\text{student}}$) to align with the teacher's visual embeddings ($z_{\text{teacher}}$) using Mean Squared Error (MSE):
+2. **Visual Distillation Loss ($L_{\text{visual}}$):** Forces the projected student visual embeddings ($\hat{z}_{\text{student}}$) to align with the teacher's visual embeddings ($z_{\text{teacher}}$) using Mean Squared Error (MSE):
 
 $$
 L_{\text{visual}} = \left\lVert \hat{z}_{\text{student}} - z_{\text{teacher}} \right\rVert_2^2
