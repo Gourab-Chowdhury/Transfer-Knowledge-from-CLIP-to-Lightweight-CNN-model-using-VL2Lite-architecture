@@ -41,10 +41,14 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 
 3. **Linguistic Distillation Loss ($L_{\text{text}}$):** Calculates cosine similarity logits between visual embeddings and all class text anchors $T$, scaled by temperature parameter $\tau = 0.07$. The Kullback-Leibler (KL) Divergence minimizes the distance between student and teacher similarity distributions:
 
-   $P_{\text{student}} = \text{softmax}\left(\frac{\hat{z}_{\text{student}} T^\top}{\tau}\right), \quad P_{\text{teacher}} = \text{softmax}\left(\frac{z_{\text{teacher}} T^\top}{\tau}\right)$$$$L_{\text{text}} = \tau^2 \cdot D_{\text{KL}}(P_{\text{student}} \parallel P_{\text{teacher}})$
+   $P_{\text{student}} = \text{softmax}\left(\frac{\hat{z}_{\text{student}}$
+
+   $T^\top}{\tau}\right), \quad P_{\text{teacher}} = \text{softmax}\left(\frac{z_{\text{teacher}} T^\top}{\tau}\right)$
+
+   $L_{\text{text}} = \tau^2 \cdot D_{\text{KL}}(P_{\text{student}} \parallel P_{\text{teacher}})$
 
 
-4. Dynamic Linear Ramp Weighting ScheduleDuring early epochs, the student relies heavily on multi-modal distillation to structure its feature manifold. As training progresses through the ramp ratio $r = 0.125$ (12.5% of total epochs), distillation weight fades and the direct task loss takes full precedence:
+5. Dynamic Linear Ramp Weighting ScheduleDuring early epochs, the student relies heavily on multi-modal distillation to structure its feature manifold. As training progresses through the ramp ratio $r = 0.125$ (12.5% of total epochs), distillation weight fades and the direct task loss takes full precedence:
    
    $w_{\text{task}}(t) = \min\left(1.0, \max\left(0.0, \frac{t}{T \cdot r}\right)\right)$
 
@@ -52,10 +56,11 @@ Mathematical Formulation & Training MechanicsThe distillation process is governe
 ## Result Images
 ![FGVC - ResNet 18](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2018.png)
 
-![FGVC - Resnet 34]([Result Images/FGVC Resnet 34.png](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2034.png))
+![FGVC - Resnet 34](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2034.png)
 
-![FGVC - Resnet 50]([https://example.com](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2050.png))
+![FGVC - Resnet 50](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/FGVC%20Resnet%2050.png)
 
-![CIPHER 10 - ResNet 50]([https://example.com](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/CIPHER10%20ResNet%2050.png))
+![CIPHER 10 - ResNet 50](https://github.com/Gourab-Chowdhury/Transfer-Knowledge-from-CLIP-to-Lightweight-CNN-model-using-VL2Lite-architecture/blob/main/Result%20Images/CIPHER10%20ResNet%2050.png)
+
 ## Reference
 1. J. Jang, C. Ma and B. Lee, "[VL2Lite: Task-Specific Knowledge Distillation from Large Vision-Language Models to Lightweight Networks](https://openaccess.thecvf.com/content/CVPR2025/papers/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.pdf)," 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Nashville, TN, USA, 2025, pp. 30073-30083, doi: 10.1109/CVPR52734.2025.02799.
